@@ -325,7 +325,7 @@
     "firstCommit": "2024-03-18"
   },
   {
-    "name": "Pedroobraga",
+    "name": "Pedro Braga",
     "githubEmails": [
       "peterbragacbm@gmail.com"
     ],
@@ -392,6 +392,134 @@
       "code": true
     },
     "firstCommit": "2024-12-28"
+  },
+  {
+    "name": "Kris Puusepp",
+    "contributions": {
+      "gallery": true
+    }  
+  },
+  {
+    "name": "Matthias Guillon",
+    "contributions": {
+      "gallery": true
+    },
+    "firstCommit": "2025-01-10"
+  },
+  {
+    "name": "mcornillon",
+    "githubEmails": [
+      "mathieu.cornillon@gmail.com"
+    ],
+    "contributions": {
+      "translations": [
+        "fr"
+      ]
+    },
+    "firstCommit": "2025-01-18"
+  },
+  {
+    "name": "Andreas Arnold",
+    "contributions": {
+      "translations": [
+        "fr"
+      ]
+    },
+    "firstCommit": "2025-01-21"
+  },
+  {
+    "name": "Leon Seidel",
+    "contributions": {
+      "gallery": true
+    },
+    "firstCommit": "2025-01-23"
+  },
+  {
+    "name": "Ettore Atalan",
+    "githubEmails": [
+      "atalanttore@googlemail.com"
+    ],
+    "contributions": {
+      "translations": [
+        "de"
+      ]
+    },
+    "firstCommit": "2025-01-26"
+  },
+  {
+    "name": "TamilNeram",
+    "githubEmails": [
+      "anishprabu.t@gmail.com"
+    ],
+    "contributions": {
+      "translations": [
+        "ta"
+      ]
+    },
+    "firstCommit": "2025-01-29"
+  },
+  {
+    "name": "sasavladimirov6",
+    "contributions": {
+      "translations": [
+        "ru"
+      ]
+    },
+    "firstCommit": "2025-02-04"
+  },
+  {
+    "name": "Sepp Vogel",
+    "githubEmails": [
+      "131676727+birdylife@users.noreply.github.com"
+    ],
+    "contributions": {
+      "code": true
+    },
+    "firstCommit": "2025-02-05"
+  },
+  {
+    "name": "Hong Phong Kim",
+    "githubEmails": [
+      "www.phongkim@gmail.com"
+    ],
+    "contributions": {
+      "translations": [
+        "km"
+      ]
+    },
+    "firstCommit": "2025-02-18"
+  },
+  {
+    "name": "Patrick Gretzki",
+    "contributions": {
+      "translations": [
+        "de"
+      ]
+    },
+    "firstCommit": "2025-02-21"
+  },
+  {
+    "name": "Rafael Bastin",
+    "contributions": {
+      "translations": [
+        "fr"
+      ]
+    },
+    "firstCommit": "2025-03-04"
+  },
+  {
+    "name": "Daniel Anya",
+    "contributions": {
+      "gallery": true
+    },
+    "firstCommit": "2025-03-05"
+  },
+  {
+    "name": "Shahar Seifer",
+    "contributions": {
+      "gallery": true
+    },
+    "firstCommit": "2025-03-11"
   },
   {
     "name": "Kris Puusepp",
