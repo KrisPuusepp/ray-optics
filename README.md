@@ -1,89 +1,10 @@
-![Example figure](https://raw.githubusercontent.com/ricktu288/ray-optics/master/src/img/spherical-lens-and-mirror.jpg)
+# Ray Optics Simulation - Student version
 
-# Ray Optics Simulation
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6386611.svg)](https://doi.org/10.5281/zenodo.6386611)
-[![Deploy to GitHub Pages](https://github.com/ricktu288/ray-optics/actions/workflows/deploy.yml/badge.svg)](https://github.com/ricktu288/ray-optics/actions/workflows/deploy.yml)
-[![Translation status](https://hosted.weblate.org/widget/ray-optics-simulation/svg-badge.svg)](https://hosted.weblate.org/engage/ray-optics-simulation/)
+Ray Optics Simulation is a web app for creating and simulating 2D geometric optical scenes. Ray Optics Simulation - Student version is a fork of the project made with the intention of making it easier for students to use and to allow embedding simulations into learning materials. Please view the NOTICE and RayOpticsChanges.txt files for a list of changes.
 
-A web app for creating and simulating 2D geometric optical scenes. Our goal is to make it easy for students to build physical intuition by "playing around", for teachers to do dynamical demonstrations, and at the same time also include tools for more advanced usage.
+# [Link to the original project](https://github.com/ricktu288/ray-optics)
 
-## Features
-- Simulate various light sources: ray, parallel/divergent beam, and point source
-- Simulate reflection in linear or curved mirrors, which can be defined by a custom equation
-- Simulate beam splitters and dichroic mirrors
-- Simulate refraction in linear or curved interfaces, which can be defined by a custom equation
-- Simulate ideal lens/mirror, which obey the lens/mirror equation
-- Simulate spherical lens defined by front/back focal distances
-- Simulate gradient-index material defined by a custom refractive index function
-- Simulate mixture of colors, color filtering, and chromatic dispersion
-- Simulate diffraction gratings.
-- View extensions of rays to see if they converge to a virtual image
-- View real images, virtual images, and virtual objects directly
-- View images that can be observed from some given position
-- Distance, angular, energy flow, and momentum flow measurements
-- Draw irradiance map and export as CSV data
-- Export as SVG diagram
-- Create modularized combinations of optical elements with custom parameters.
-- Use the simulator as a node module in your own project.
-
-## Links
-- [**Launch the Web App**](https://phydemo.app/ray-optics/simulator/)
-- [Gallery](https://phydemo.app/ray-optics/gallery/)
-- [Documentation](https://phydemo.app/ray-optics/docs/index.html)
-- [About](https://phydemo.app/ray-optics/about)
-- [Run Locally](https://github.com/ricktu288/ray-optics/blob/master/run-locally/README.md)
-
-## Cite this project
-
-If you use this project in your research, please cite it using the metadata in the [CITATION.bib](https://github.com/ricktu288/ray-optics/blob/master/CITATION.bib) file.
-
-You can also include the URL https://phydemo.app/ray-optics/ in the citation. The URL will not change in the foreseeable future (at least until 2032).
-
-If you are strict about versioning, you may consider using the latest "released" version, which is older than the online version of this project, and replace the project DOI in the citation file above with the versioned DOI. The DOI for the latest `v5.0` release is `10.5281/zenodo.14538565`. See [Run Locally](https://github.com/ricktu288/ray-optics/blob/master/run-locally/README.md#run-the-released-version) for how to run the released version locally.
-
-## Contributing
-
-Contributions are welcome. For the following types of contributions, no (or little) programming knowledge is required:
-
-- New items in the [gallery](https://phydemo.app/ray-optics/gallery/)
-- New translations
-- New modules (as in Tools -> Other -> Import Modules)
-
-See [CONTRIBUTING.md](https://github.com/ricktu288/ray-optics/blob/master/CONTRIBUTING.md) for the tutorial.
-
-For translations, note that this project uses Weblate. Please visit https://hosted.weblate.org/engage/ray-optics-simulation/ to translate.
-
-[![Translation status](https://hosted.weblate.org/widget/ray-optics-simulation/287x66-grey.png)](https://hosted.weblate.org/engage/ray-optics-simulation/)
-
-To contribute code, you need to have some knowledge of JavaScript and module bundling. The code is written in ES6 and bundled with Webpack. The code structure is documented in the [documentation](https://phydemo.app/ray-optics/docs/index.html). See the following section for installation instructions.
-
-## Installation
-
-> [!NOTE]
-> The following instructions are for developers. If you just want to use the web app, you can launch it directly from [here](https://phydemo.app/ray-optics/simulator/).
-> If you just want to run the project locally, please see [Run Locally](https://github.com/ricktu288/ray-optics/blob/master/run-locally/README.md).
-
-To run the web app locally for development, you need to have Node.js installed. Then, run the following commands in the terminal:
-```bash
-git clone https://github.com/ricktu288/ray-optics.git
-cd ray-optics
-npm install --no-optional
-npm run start
-```
-After that, the simulator web app should be running at `http://localhost:8080/simulator/`. Note however that some links and the "import module" window will not work because the other part of the project is not built.
-
-If you want to build the entire project, including the home pages, gallery, modules, documentation, and the node version of the simulator, you can run the following command:
-```bash
-npm install
-npm run build
-```
-After that, the entire content for the [https://phydemo.app/ray-optics/](https://phydemo.app/ray-optics/) website will be in the `dist` folder. You can again run `npm run start` to run the simulator locally, and now all the links and the "import module" window should work.
-
-If an error occurs during the installation, some common reasons are:
-- The version of Node.js is too old. You can update Node.js to version 18 or later.
-- Some system dependencies for node-canvas are missing. You can find the instructions for installing the dependencies in the [node-canvas repository](https://github.com/Automattic/node-canvas).
-
-The full build may takes about half an hour to complete due to the generation of the large numbers of images for the gallery.
+# Demo: [optikasimulatsioonid.netlify.app](https://optikasimulatsioonid.netlify.app/)
 
 ## Project structure
 
