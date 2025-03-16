@@ -126,12 +126,6 @@
         ]
       },
       {
-        "id": "distortion-in-windows-and-backside-mirrors",
-        "contributors": [
-          "Shahar Seifer"
-        ]
-      },
-      {
         "id": "bended-pencil",
         "contributors": [
           "Stas Fainer"
@@ -191,12 +185,6 @@
         ]
       },
       {
-        "id": "virtual-image-formation",
-        "contributors": [
-          "Daniel Anya"
-        ]
-      },
-      {
         "id": "transverse-and-longitudinal-magnification",
         "contributors": [
           "Stas Fainer"
@@ -219,12 +207,6 @@
         "id": "chromatic-aberration",
         "contributors": [
           "Yi-Ting Tu"
-        ]
-      },
-      {
-        "id": "orientations-of-plano-convex-lens",
-        "contributors": [
-          "Matthias Guillon"
         ]
       },
       {
@@ -297,12 +279,6 @@
         "id": "pair-of-axicons-making-a-rainbow-ring",
         "contributors": [
           "Peter Becher"
-        ]
-      },
-      {
-        "id": "koehler-illumination",
-        "contributors": [
-          "Leon Seidel"
         ]
       }
     ]

@@ -105,8 +105,8 @@ class Editor {
     /** @property {Point} mousePos - The position of the mouse in the scene. */
     this.mousePos = geometry.point(0, 0);
 
-    /** @property {Point|null} lastMousePos - The position of the mouse in the scene when the last mousedown event is triggered before the mouse is treated as moved. */
-    this.lastMousePos = null;
+    /** @property {Point} lastMousePos - The position of the mouse in the scene when the last mousedown event is triggered. */
+    this.lastMousePos = geometry.point(0, 0);
 
     /** @property {boolean} isConstructing - Whether an object is being constructed. */
     this.isConstructing = false;
@@ -655,13 +655,10 @@ class Editor {
     const rawX = (et.pageX - e.target.offsetLeft - this.scene.origin.x) / this.scene.scale;
     const rawY = (et.pageY - e.target.offsetTop - this.scene.origin.y) / this.scene.scale;
 
-    if (this.lastMousePos) {
-      // Calculate the distance moved
-      const distanceSquared = geometry.distanceSquared(this.lastMousePos, geometry.point(rawX, rawY));
-      if (distanceSquared < (this.minimalDragLength * this.minimalDragLength) / (this.scene.scale * this.scene.scale)) {
-        return; // Do not proceed if the drag is less than the threshold
-      }
-      this.lastMousePos = null;
+    // Calculate the distance moved
+    const distanceSquared = geometry.distanceSquared(this.lastMousePos, geometry.point(rawX, rawY));
+    if (distanceSquared < (this.minimalDragLength * this.minimalDragLength) / (this.scene.scale * this.scene.scale)) {
+      return; // Do not proceed if the drag is less than the threshold
     }
     
     // Truncate to binary fractions
@@ -1331,28 +1328,22 @@ class Editor {
       const ctxs = [];
       for (let i = 0; i < 4; i++) {
         canvases.push(document.createElement('canvas'));
-        ctxs.push(canvases[i].getContext('2d'));
+        if (i === 0 && self.simulator.useFloatColorRenderer) {
+          const contextAttributes = {
+            alpha: true,
+            premultipliedAlpha: true,
+            antialias: false,
+          };
+          var gl = canvases[i].getContext('webgl', contextAttributes) || canvases[i].getContext('experimental-webgl', contextAttributes);
+          ctxs.push(gl)
+        } else {
+          ctxs.push(canvases[i].getContext('2d'));
+        }
         canvases[i].width = imageWidth;
         canvases[i].height = imageHeight;
       }
 
-
-
-      let canvasGl = document.createElement('canvas');
-      let gl = null;
-      if (self.simulator.glMain) {
-        canvasGl.width = imageWidth;
-        canvasGl.height = imageHeight;
-
-        const contextAttributes = {
-          alpha: true,
-          premultipliedAlpha: true,
-          antialias: false,
-        };
-        gl = canvasGl.getContext('webgl', contextAttributes) || canvasGl.getContext('experimental-webgl', contextAttributes);
-      }
-
-      const exportSimulator = new Simulator(exportingScene, ctxs[0], ctxs[1], ctxs[2], ctxs[3], document.createElement('canvas').getContext('2d'), false, cropBox.rayCountLimit || 1e7, gl);
+      const exportSimulator = new Simulator(exportingScene, ctxs[0], ctxs[1], ctxs[2], ctxs[3], document.createElement('canvas').getContext('2d'), false, cropBox.rayCountLimit || 1e7, self.simulator.useFloatColorRenderer);
 
       function onSimulationEnd() {
         const finalCanvas = document.createElement('canvas');
@@ -1363,11 +1354,7 @@ class Editor {
         finalCtx.fillRect(0, 0, cropBox.width, cropBox.width * (cropBox.p4.y - cropBox.p1.y) / (cropBox.p4.x - cropBox.p1.x));
         finalCtx.drawImage(canvases[1], 0, 0);
         finalCtx.drawImage(canvases[3], 0, 0);
-        if (self.scene.colorMode == 'default') {
-          finalCtx.drawImage(canvases[0], 0, 0);
-        } else {
-          finalCtx.drawImage(canvasGl, 0, 0);
-        }
+        finalCtx.drawImage(canvases[0], 0, 0);
         finalCtx.drawImage(canvases[2], 0, 0);
 
         finalCanvas.toBlob(function (blob) {
