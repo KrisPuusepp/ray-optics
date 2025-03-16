@@ -103,14 +103,6 @@
       },
       {
         "type": "TextLabel",
-        "x": 600,
-        "y": 20,
-        "text": "{{tisvari1}}",
-        "alignment": "center",
-        "angle": 90
-      },
-      {
-        "type": "TextLabel",
         "x": 0,
         "y": 20,
         "text": "{{punktvalgusallikad}}",
@@ -120,20 +112,6 @@
         "type": "PointSource",
         "x": 0,
         "y": 100
-      },
-      {
-        "type": "TextLabel",
-        "x": 600,
-        "y": 180,
-        "text": "{{poolvari}}",
-        "angle": 90
-      },
-      {
-        "type": "TextLabel",
-        "x": 600,
-        "y": -100,
-        "text": "{{poolvari1}}",
-        "angle": 90
       }
     ],
     "width": 1800,

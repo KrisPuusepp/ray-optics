@@ -22,7 +22,7 @@
               "x": "`x_1`",
               "y": "`y_1`"
             },
-            "brightness": "`max((round((x_5- 300)/0.5)+455)/1, -100000)`",
+            "brightness": "`max((round((x_5- 300)/0.5)+455)/1, 0)`",
             "wavelength": "`min(max((round((x_4-300)/1.2)+488)/1, 300), 700)`"
           },
           {
@@ -42,21 +42,21 @@
             "type": "TextLabel",
             "x": 300,
             "y": 290,
-            "text": "n = `max((round((x_3-300)/0.5)+440)/1, -500)`",
+            "text": "n = `max((round((x_3-300)/0.5)+440)/1, 1)`",
             "alignment": "center"
           },
           {
             "type": "TextLabel",
             "x": 300,
             "y": 350,
-            "text": "λ = `min(max((round((x_4-300)/1.2)+488)/1, 300), 700)`",
+            "text": "λ = `min(max((round((x_4-300)/1.2)+488)/1, 300), 700)`nm",
             "alignment": "center"
           },
           {
             "type": "TextLabel",
             "x": 300,
             "y": 410,
-            "text": "heledus = `max((round((x_5- 300)/0.5)+455)/1, -100000)`",
+            "text": "heledus = `max((round((x_5- 300)/0.5)+455)/1, 0)`",
             "alignment": "center"
           }
         ]

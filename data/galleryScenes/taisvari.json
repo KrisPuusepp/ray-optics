@@ -88,14 +88,6 @@
       },
       {
         "type": "TextLabel",
-        "x": 600,
-        "y": 20,
-        "text": "{{tisvari}}",
-        "alignment": "center",
-        "angle": 90
-      },
-      {
-        "type": "TextLabel",
         "x": 0,
         "y": -80,
         "text": "{{punktvalgusallikas}}",

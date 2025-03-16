@@ -121,28 +121,6 @@
         }
       },
       {
-        "type": "TextLabel",
-        "x": 600,
-        "y": 0,
-        "text": "{{tisvari2}}",
-        "alignment": "center",
-        "angle": 90
-      },
-      {
-        "type": "TextLabel",
-        "x": 600,
-        "y": 200,
-        "text": "{{poolvari2}}",
-        "angle": 90
-      },
-      {
-        "type": "TextLabel",
-        "x": 600,
-        "y": -120,
-        "text": "{{poolvari3}}",
-        "angle": 90
-      },
-      {
         "type": "ModuleObj",
         "module": "CircleSource",
         "points": [
