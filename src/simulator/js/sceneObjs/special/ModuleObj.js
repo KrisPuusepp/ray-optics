@@ -124,16 +124,16 @@ class ModuleObj extends BaseSceneObj {
     }
 
     // Draw the control points
-    ctx.lineWidth = 1 * ls;
-    for (let point of this.points) {
-      ctx.beginPath();
-      ctx.strokeStyle = isHovered ? 'cyan' : ('gray');
-      ctx.arc(point.x, point.y, 2 * ls, 0, Math.PI * 2, false);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(point.x, point.y, 5 * ls, 0, Math.PI * 2, false);
-      ctx.stroke();
-    }
+    //ctx.lineWidth = 1 * ls;
+    //for (let point of this.points) {
+    //  ctx.beginPath();
+    //  ctx.strokeStyle = isHovered ? 'cyan' : ('gray');
+    //  ctx.arc(point.x, point.y, 2 * ls, 0, Math.PI * 2, false);
+    //  ctx.stroke();
+    //  ctx.beginPath();
+    //  ctx.arc(point.x, point.y, 5 * ls, 0, Math.PI * 2, false);
+    //  ctx.stroke();
+    //}
   }
 
   move(diffX, diffY) {

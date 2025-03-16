@@ -1,0 +1,169 @@
+{
+    "version": 5,
+    "modules": {
+      "CircleSource": {
+        "numPoints": 1,
+        "params": [
+          "r=0:1:500:100",
+          "N=1:1:500:10",
+          "brightness=0.01:0.01:10:1"
+        ],
+        "objs": [
+          {
+            "for": "theta=0:2pi/N:2pi-0.0001",
+            "type": "AngleSource",
+            "p1": {
+              "x": "`x_1+r*cos(theta)`",
+              "y": "`y_1+r*sin(theta)`"
+            },
+            "p2": {
+              "x": "`x_1+(r+1)*cos(theta)`",
+              "y": "`y_1+(r+1)*sin(theta)`"
+            },
+            "brightness": "`brightness/N`",
+            "emisAngle": 180
+          }
+        ]
+      },
+      "CustomCircle": {
+        "numPoints": 2,
+        "params": [],
+        "objs": [
+          {
+            "type": "CircleBlocker",
+            "p1": {
+              "x": "`x_1`",
+              "y": "`y_1`"
+            },
+            "p2": {
+              "x": "`x_1`",
+              "y": "`y_2`"
+            }
+          }
+        ]
+      }
+    },
+    "objs": [
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 300,
+          "y": 200
+        },
+        "p2": {
+          "x": 300,
+          "y": 80
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 1
+            },
+            "targetObjIndex": 2,
+            "newPoint": {
+              "x": 300,
+              "y": 80
+            }
+          }
+        ],
+        "transformation": "yTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 300,
+          "y": 150
+        },
+        "p2": {
+          "x": 300,
+          "y": 0
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 0
+            },
+            "targetObjIndex": 2,
+            "newPoint": {
+              "x": 300,
+              "y": 0
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "ModuleObj",
+        "module": "CustomCircle",
+        "points": [
+          {
+            "x": 300,
+            "y": 0
+          },
+          {
+            "x": 300,
+            "y": 80
+          }
+        ],
+        "params": {}
+      },
+      {
+        "type": "Blocker",
+        "p1": {
+          "x": 600,
+          "y": -600
+        },
+        "p2": {
+          "x": 600,
+          "y": 600
+        }
+      },
+      {
+        "type": "TextLabel",
+        "x": 600,
+        "y": 0,
+        "text": "{{tisvari2}}",
+        "alignment": "center",
+        "angle": 90
+      },
+      {
+        "type": "TextLabel",
+        "x": 600,
+        "y": 200,
+        "text": "{{poolvari2}}",
+        "angle": 90
+      },
+      {
+        "type": "TextLabel",
+        "x": 600,
+        "y": -120,
+        "text": "{{poolvari3}}",
+        "angle": 90
+      },
+      {
+        "type": "ModuleObj",
+        "module": "CircleSource",
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "params": {
+          "r": 50,
+          "N": 80,
+          "brightness": 10
+        }
+      }
+    ],
+    "width": 1800,
+    "height": 900,
+    "rayModeDensity": 4.830741618110278,
+    "origin": {
+      "x": 604.0826312506481,
+      "y": 455.8327305793225
+    },
+    "scale": 1.290396569750297
+  }

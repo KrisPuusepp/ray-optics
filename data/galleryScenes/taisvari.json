@@ -1,0 +1,128 @@
+{
+    "version": 5,
+    "modules": {
+      "CustomCircle": {
+        "numPoints": 2,
+        "params": [],
+        "objs": [
+          {
+            "type": "CircleBlocker",
+            "p1": {
+              "x": "`x_1`",
+              "y": "`y_1`"
+            },
+            "p2": {
+              "x": "`x_1`",
+              "y": "`y_2`"
+            }
+          }
+        ]
+      }
+    },
+    "objs": [
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 300,
+          "y": 200
+        },
+        "p2": {
+          "x": 300,
+          "y": 80
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 1
+            },
+            "targetObjIndex": 6,
+            "newPoint": {
+              "x": 300,
+              "y": 80
+            }
+          }
+        ],
+        "transformation": "yTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 300,
+          "y": 150
+        },
+        "p2": {
+          "x": 300,
+          "y": 0
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 0
+            },
+            "targetObjIndex": 6,
+            "newPoint": {
+              "x": 300,
+              "y": 0
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "PointSource",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "type": "Blocker",
+        "p1": {
+          "x": 600,
+          "y": -300
+        },
+        "p2": {
+          "x": 600,
+          "y": 300
+        }
+      },
+      {
+        "type": "TextLabel",
+        "x": 600,
+        "y": 20,
+        "text": "{{tisvari}}",
+        "alignment": "center",
+        "angle": 90
+      },
+      {
+        "type": "TextLabel",
+        "x": 0,
+        "y": -80,
+        "text": "{{punktvalgusallikas}}",
+        "alignment": "center"
+      },
+      {
+        "type": "ModuleObj",
+        "module": "CustomCircle",
+        "points": [
+          {
+            "x": 300,
+            "y": 0
+          },
+          {
+            "x": 300,
+            "y": 80
+          }
+        ],
+        "params": {}
+      }
+    ],
+    "width": 1800,
+    "height": 900,
+    "rayModeDensity": 1.351885115138106,
+    "origin": {
+      "x": 372.6905359471774,
+      "y": 442.4041052831023
+    },
+    "scale": 1.7481559605422023
+  }

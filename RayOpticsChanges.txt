@@ -1,0 +1,37 @@
+Modified Editor.js to
+- prevent users from moving objects directly (only handles can be used)
+- only highlight handles when hovering over objects
+- prevent users from constructing new objects and handles
+- prevent users from double clicking objects to move them
+- stop an error from occuring in onCanvasMouseUp(e) with try-catch
+
+Modified app.js to
+- prevent users from deleting and cloning objects and handles
+- prevent users from saving files
+- prevent users from opening files
+- remove the "Reload site?" and "Leave site?" popups when trying to reload or close the simulation when changes have been made
+- stop the URL from changing after the scene has loaded, so that when the language is changed or the website is otherwise reloaded the simulator reloads the scene instead of loading a blank scene
+
+Modified Handle.js to
+- prevent the drawing of control points when using handles
+- prevent the drawing of pivot points when using handles that rotate
+
+Modified ModuleObj.js to
+- prevent the drawing of control points
+
+Modified SingleRay.js to
+- prevent the drawing of control points
+
+Modified index.html to
+- hide the most of the toolbar (with some changes to css)
+- hide most settings
+- hide the object
+- hide the footer buttons
+
+Added an impartial "ee" Estonian locale. Only text that can be seen has been translated. Some text has been removed to simplify usage of the program.
+
+Added "Kris Puusepp" to contributors.json
+
+Added new scenes. The text in the scenes is only available in Estonian.
+
+Added a "NOTICE" file

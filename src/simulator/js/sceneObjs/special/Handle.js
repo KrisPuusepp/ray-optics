@@ -84,17 +84,17 @@ class Handle extends BaseSceneObj {
     const ls = canvasRenderer.lengthScale;
     ctx.lineWidth = 1 * ls;
 
-    if (this.transformation == "default" || isHovered) {
-      for (var i in this.controlPoints) {
-        ctx.globalAlpha = 1;
-        ctx.beginPath();
-        ctx.strokeStyle = this.notDone ? 'cyan' : isHovered ? 'cyan' : ('gray');
-        ctx.setLineDash([2 * ls, 2 * ls]);
-        ctx.arc(this.controlPoints[i].newPoint.x, this.controlPoints[i].newPoint.y, 5 * ls, 0, Math.PI * 2, false);
-        ctx.stroke();
-        ctx.setLineDash([]);
-      }
-    }
+    //if (this.transformation == "default" || isHovered) {
+    //  for (var i in this.controlPoints) {
+    //    ctx.globalAlpha = 1;
+    //    ctx.beginPath();
+    //    ctx.strokeStyle = this.notDone ? 'cyan' : isHovered ? 'cyan' : ('gray');
+    //    ctx.setLineDash([2 * ls, 2 * ls]);
+    //    ctx.arc(this.controlPoints[i].newPoint.x, this.controlPoints[i].newPoint.y, 5 * ls, 0, Math.PI * 2, false);
+    //    ctx.stroke();
+    //    ctx.setLineDash([]);
+    //  }
+    //}
 
     const arrowLineWidthCross = 5 * ls;
     const arrowLineWidthSingle = 8 * ls;
@@ -195,18 +195,18 @@ class Handle extends BaseSceneObj {
       }
 
       // Draw the rotation/scale center
-      ctx.lineWidth = 1 * ls;
-      if (this.transformation == "default" || this.transformation == "rotation" || this.transformation == "scaling") {
-        ctx.strokeStyle = isHovered ? 'cyan' : ('gray');
-        ctx.beginPath();
-        ctx.moveTo(this.p2.x - 5 * ls, this.p2.y);
-        ctx.lineTo(this.p2.x + 5 * ls, this.p2.y);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(this.p2.x, this.p2.y - 5 * ls);
-        ctx.lineTo(this.p2.x, this.p2.y + 5 * ls);
-        ctx.stroke();
-      }
+      //ctx.lineWidth = 1 * ls;
+      //if (this.transformation == "default" || this.transformation == "rotation" || this.transformation == "scaling") {
+      //  ctx.strokeStyle = isHovered ? 'cyan' : ('gray');
+      //  ctx.beginPath();
+      //  ctx.moveTo(this.p2.x - 5 * ls, this.p2.y);
+      //  ctx.lineTo(this.p2.x + 5 * ls, this.p2.y);
+      //  ctx.stroke();
+      //  ctx.beginPath();
+      //  ctx.moveTo(this.p2.x, this.p2.y - 5 * ls);
+      //  ctx.lineTo(this.p2.x, this.p2.y + 5 * ls);
+      //  ctx.stroke();
+      //}
     }
   }
 

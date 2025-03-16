@@ -337,6 +337,16 @@
       "rightangle": "right-angle",
       "title": "Prisms"
     },
+    "prisma": {
+      "title": "Prisma",
+      "description": "Prisma simulatsioon",
+      "prisma": "Prisma"
+    },
+    "prisma_dispersioon": {
+      "title": "Prisma dispersioon",
+      "description": "Prisma dispersiooni simulatsioon",
+      "prisma": "Prisma"
+    },
     "rainbows": {
       "alexandersdarkband": "Alexander's dark band",
       "description": "This simulation demonstrates the formation of the primary rainbow, the secondary rainbow, and Alexandar's dark band. Here the spectrum of the sunlight is approximated by mixing red, orange, yellow, green, cyan, blue, and violet colors. The outgoing rays for the primary/secondary rainbow are due to one/two internal reflections within the raindrop (you can see this by setting Ray Density to a low number and dragging the raindrop). Note that these are not total internal reflections, so the intensities of the outgoing rays are much lower than the incoming rays. Since the [minimum deviation angles](/gallery/minimum-deviation-angle) depend on the wavelength, different colors accumulate at different angles. Hence the colors in the rainbows are produced. Away from the minimum angles, the rays do not accumulate, so all colors are weak and mixed together, producing the dim white (or \"gray\") color at the angles just outside the two rainbows. On the other hand, no rays go to the angle between the two rainbows, forming Alexandar's dark band.",
@@ -466,6 +476,64 @@
       "dragtomovethelens": "Drag to move the lens",
       "title": "Zoom Lens",
       "zoom": "← zoom →"
+    },
+    "peegeldumisseadus": {
+      "title": "peegeldumisseadus",
+      "peegelpind": "Peegelpind",
+      "pinnaristsirgenormaa": "Pinna ristsirge (normaal)",
+      "langevkiir": "Langev kiir",
+      "peegeldunudkiir": "Peegeldunud kiir"
+    },
+    "taisvari": {
+      "title": "taisvari",
+      "tisvari": "Täisvari",
+      "punktvalgusallikas": "Punktvalgusallikas"
+    },
+    "poolvarjud": {
+      "title": "poolvarjud",
+      "tisvari1": "Täisvari",
+      "punktvalgusallikad": "Punktvalgusallikad",
+      "poolvari": "Poolvari",
+      "poolvari1": "Poolvari"
+    },
+    "valgusallikavarjud": {
+      "title": "valgusallikavarjud",
+      "tisvari2": "Täisvari",
+      "poolvari2": "Poolvari",
+      "poolvari3": "Poolvari"
+    },
+    "murdumine": {
+      "title": "murdumine",
+      "klaas": "Klaas",
+      "pinnaristsirgenormaa1": "Pinna ristsirge (normaal)",
+      "langevkiir1": "Langev kiir",
+      "murdunudkiir": "Murdunud kiir",
+      "vaakum": "Vaakum",
+      "n2": "n = 2",
+      "n1": "n = 1"
+    },
+    "kumerlaats": {
+      "title": "Kumerlääts",
+      "kumerlts": "Kumerlääts"
+    },
+    "noguslaats": {
+      "title": "Nõguslääts",
+      "nguslts": "Nõguslääts"
+    },
+    "taielik_sisepeegeldumine": {
+      "title": "Täielik sisepeegeldumine - valguskaabel"
+    },
+    "kepleriTeleskoop": {
+      "title": "Kepleri teleskoop",
+      "objektiiv": "Objektiiv",
+      "okulaar": "Okulaar"
+    },
+    "galileiTeleskoop": {
+      "title": "Galilei teleskoop"
+    },
+    "difraktsioon": {
+      "title": "Difraktsioonivõre",
+      "difraktsioonivre": "Difraktsioonivõre"
     }
   },
   "galleryPage": {

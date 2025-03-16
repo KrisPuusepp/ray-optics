@@ -1,0 +1,302 @@
+{
+    "version": 5,
+    "modules": {
+      "Objektiiv": {
+        "numPoints": 2,
+        "params": [],
+        "objs": [
+          {
+            "type": "IdealLens",
+            "p1": {
+              "x": "`x_1`",
+              "y": 0
+            },
+            "p2": {
+              "x": "`x_1`",
+              "y": 320
+            },
+            "focalLength": "`abs(x_1 - x_2)`"
+          },
+          {
+            "type": "TextLabel",
+            "x": "`x_1`",
+            "y": -12.5,
+            "text": "{{objektiiv}}",
+            "alignment": "center"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`x_2`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`x_2`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`x_2`",
+            "y": 150,
+            "text": "f₁",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`2 * x_1 - x_2`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`2 * x_1 - x_2`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`2 * x_1 - x_2`",
+            "y": 150,
+            "text": "f₁",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          }
+        ]
+      },
+      "Okulaar": {
+        "numPoints": 2,
+        "params": [],
+        "objs": [
+          {
+            "type": "IdealLens",
+            "p1": {
+              "x": "`x_1`",
+              "y": 0
+            },
+            "p2": {
+              "x": "`x_1`",
+              "y": 320
+            },
+            "focalLength": "`-abs(x_1 - x_2)`"
+          },
+          {
+            "type": "TextLabel",
+            "x": "`x_1`",
+            "y": -12.5,
+            "text": "{{okulaar}}",
+            "alignment": "center"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`x_2`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`x_2`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`x_2`",
+            "y": 200,
+            "text": "f₂",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`2 * x_1 - x_2`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`2 * x_1 - x_2`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`2 * x_1 - x_2`",
+            "y": 200,
+            "text": "f₂",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          }
+        ]
+      }
+    },
+    "objs": [
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 260,
+          "y": 360
+        },
+        "p2": {
+          "x": 260,
+          "y": 120
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 0
+            },
+            "targetObjIndex": 6,
+            "newPoint": {
+              "x": 260,
+              "y": 120
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 60,
+          "y": 360
+        },
+        "p2": {
+          "x": 60,
+          "y": 160
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 0
+            },
+            "targetObjIndex": 4,
+            "newPoint": {
+              "x": 60,
+              "y": 160
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 360,
+          "y": 220
+        },
+        "p2": {
+          "x": 360,
+          "y": 260
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 1
+            },
+            "targetObjIndex": 6,
+            "newPoint": {
+              "x": 360,
+              "y": 260
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 360,
+          "y": 100
+        },
+        "p2": {
+          "x": 360,
+          "y": 60
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 1
+            },
+            "targetObjIndex": 4,
+            "newPoint": {
+              "x": 360,
+              "y": 60
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "ModuleObj",
+        "module": "Objektiiv",
+        "points": [
+          {
+            "x": 60,
+            "y": 160
+          },
+          {
+            "x": 360,
+            "y": 60
+          }
+        ],
+        "params": {}
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": -3000,
+          "y": 160
+        },
+        "p2": {
+          "x": 9000,
+          "y": 160
+        }
+      },
+      {
+        "type": "ModuleObj",
+        "module": "Okulaar",
+        "points": [
+          {
+            "x": 260,
+            "y": 120
+          },
+          {
+            "x": 360,
+            "y": 260
+          }
+        ],
+        "params": {}
+      },
+      {
+        "type": "Beam",
+        "p1": {
+          "x": -700,
+          "y": 80
+        },
+        "p2": {
+          "x": -700,
+          "y": 240
+        },
+        "brightness": 0.2
+      }
+    ],
+    "width": 1800,
+    "height": 900,
+    "rayModeDensity": 0.049787068367863944,
+    "snapToGrid": true,
+    "observer": {
+      "c": {
+        "x": 76.24421517450193,
+        "y": 127.45811693052168
+      },
+      "r": 20
+    },
+    "origin": {
+      "x": 575.3006774542594,
+      "y": 240.72694409818197
+    },
+    "scale": 1.4238403521039857
+  }

@@ -59,10 +59,10 @@ class SingleRay extends LineObjMixin(BaseSceneObj) {
     const ls = canvasRenderer.lengthScale;
 
     const colorArray = Simulator.wavelengthToColor(this.wavelength, 1);
-    ctx.fillStyle = isHovered ? 'cyan' : (this.scene.simulateColors ? canvasRenderer.rgbaToCssColor(colorArray) : 'rgb(255,0,0)');
-    ctx.fillRect(this.p1.x - 2.5 * ls, this.p1.y - 2.5 * ls, 5 * ls, 5 * ls);
-    ctx.fillStyle = isHovered ? 'cyan' : ('rgb(255,0,0)');
-    ctx.fillRect(this.p2.x - 1.5 * ls, this.p2.y - 1.5 * ls, 3 * ls, 3 * ls);
+    //ctx.fillStyle = isHovered ? 'cyan' : (this.scene.simulateColors ? canvasRenderer.rgbaToCssColor(colorArray) : 'rgb(255,0,0)');
+    //ctx.fillRect(this.p1.x - 2.5 * ls, this.p1.y - 2.5 * ls, 5 * ls, 5 * ls);
+    //ctx.fillStyle = isHovered ? 'cyan' : ('rgb(255,0,0)');
+    //ctx.fillRect(this.p2.x - 1.5 * ls, this.p2.y - 1.5 * ls, 3 * ls, 3 * ls);
   }
 
   onSimulationStart() {

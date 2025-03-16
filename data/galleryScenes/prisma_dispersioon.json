@@ -1,0 +1,218 @@
+{
+    "version": 5,
+    "modules": {
+      "CustomRay": {
+        "numPoints": 3,
+        "params": [],
+        "objs": [
+          {
+            "type": "TextLabel",
+            "x": 300,
+            "y": -15,
+            "text": "{{prisma}}",
+            "alignment": "center"
+          },
+          {
+            "type": "ModuleObj",
+            "module": "ContSpectrum",
+            "points": [
+              {
+                "x": "`x_2`",
+                "y": "`y_2`"
+              },
+              {
+                "x": "`x_1`",
+                "y": "`y_1`"
+              }
+            ],
+            "params": {
+              "min": 380,
+              "step": 1,
+              "max": 700,
+              "brightness": 50
+            }
+          },
+          {
+            "type": "Glass",
+            "path": [
+              {
+                "x": 300,
+                "y": 0,
+                "arc": false
+              },
+              {
+                "x": 200,
+                "y": 200,
+                "arc": false
+              },
+              {
+                "x": 400,
+                "y": 200,
+                "arc": false
+              }
+            ],
+            "refIndex": "`max((round((x_3-300)/3)+175)/100, 1)`",
+            "cauchyB": "`min(max((round((x_3-300)/3)+20)/1000, 0), 0.02)`"
+          },
+          {
+            "type": "TextLabel",
+            "x": 300,
+            "y": 250,
+            "text": "n = `max((round((x_3-300)/3)+175)/100, 1)` ",
+            "alignment": "center"
+          }
+        ]
+      },
+      "ContSpectrum": {
+        "numPoints": 2,
+        "params": [
+          "min=380:1:700:380",
+          "step=1:1:100:10",
+          "max=380:1:700:700",
+          "brightness=0.01:0.01:100:50"
+        ],
+        "objs": [
+          {
+            "for": "lambda=min:step:max",
+            "type": "SingleRay",
+            "p1": {
+              "x": "`x_1`",
+              "y": "`y_1`"
+            },
+            "p2": {
+              "x": "`x_2`",
+              "y": "`y_2`"
+            },
+            "wavelength": "`lambda`",
+            "brightness": "`brightness/((max-min)/step)`"
+          }
+        ]
+      }
+    },
+    "objs": [
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 50,
+          "y": 200
+        },
+        "p2": {
+          "x": 100,
+          "y": 150
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 0
+            },
+            "targetObjIndex": 2,
+            "newPoint": {
+              "x": 175,
+              "y": 110
+            }
+          }
+        ],
+        "transformation": "rotation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 300,
+          "y": 300
+        },
+        "p2": {
+          "x": 300,
+          "y": 300
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 2
+            },
+            "targetObjIndex": 2,
+            "newPoint": {
+              "x": 300,
+              "y": 275
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "ModuleObj",
+        "module": "CustomRay",
+        "points": [
+          {
+            "x": 175,
+            "y": 110
+          },
+          {
+            "x": 100,
+            "y": 150
+          },
+          {
+            "x": 300,
+            "y": 275
+          }
+        ],
+        "params": {}
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 320
+        },
+        "p2": {
+          "x": 525,
+          "y": 320
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 320
+        },
+        "p2": {
+          "x": 75,
+          "y": 300
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 525,
+          "y": 320
+        },
+        "p2": {
+          "x": 525,
+          "y": 300
+        }
+      },
+      {
+        "type": "TextLabel",
+        "x": 525,
+        "y": 300,
+        "text": "2.5",
+        "alignment": "center"
+      },
+      {
+        "type": "TextLabel",
+        "x": 75,
+        "y": 300,
+        "text": "1.0",
+        "alignment": "center"
+      }
+    ],
+    "width": 1800,
+    "height": 900,
+    "origin": {
+      "x": 292.4294677056997,
+      "y": 262.92228434256884
+    },
+    "scale": 1.512828219998254,
+    "simulateColors": true
+  }

@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "colon": "{{name}} : {{value}}",
+    "languageName": "Eesti",
+    "list": "{{first}}, {{others}}",
+    "parentheses": "{{main}} ({{sub}})"
+  },
+  "view": {
+    "extended": {
+      "description": "Näita nii kiiri kui ka nende pikendusi. Oranž tähistab vastassuunalisi pikendusi ja hall tähistab samasuunalisi pikendusi.",
+      "simulateColorsNote": " ",
+      "title": "Pikendatud kiired"
+    },
+    "images": {
+      "description": "Näita kõikide kujutiste asukohti. Kollased punktid tähistavad tõeliseid kujutisi, oranžid tähistavad näivaid kujutisi ja hallid (antud pildil ei ole ühtegi) tähistavad näivaid objekte.\nMõningaid kujutisi ei ole võimalik tuvastada, kui 'Kiirte tihedus' ei ole piisavalt suur.",
+      "simulateColorsNote": " ",
+      "title": "Kõik kujutised"
+    },
+    "observer": {
+      "description": "Simuleerige kiirte ja kujutiste vaatlemist mõnest kohast. Sinine ring on vaatleja.  Kiired on kujutatud sinise värviga, tõelised punktid kollasega ja näivad punktid oranžiga.",
+      "instruction": "Vaatlejat saab liigutada.",
+      "simulateColorsNote": " ",
+      "title": "Vaatleja"
+    },
+    "rays": {
+      "description": "Näita kiiri.",
+      "title": "Kiired"
+    }
+  }
+}

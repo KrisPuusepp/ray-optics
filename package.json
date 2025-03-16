@@ -57,8 +57,8 @@
     "build-images": "node ./scripts/buildImages.mjs",
     "build-simulator": "webpack --mode=production",
     "build-docs": "jsdoc -c jsdoc.json",
-    "start": "webpack serve --open simulator/ --mode=development",
-    "build": "npm run build-webpages && npm run build-scenes && npm run build-node && npm run build-images && npm run build-simulator && npm run build-docs",
+    "start": "webpack serve --mode=development",
+    "build": "npm run build-webpages && npm run build-scenes && npm run build-node && npm run build-simulator",
     "add-to-gallery": "node ./scripts/addToGallery.mjs",
     "add-to-modules": "node ./scripts/addToModules.mjs",
     "sort-translations": "node ./scripts/sortTranslations.mjs"

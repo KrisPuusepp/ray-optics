@@ -1,0 +1,245 @@
+{
+    "version": 5,
+    "modules": {
+      "CustomRay": {
+        "numPoints": 2,
+        "params": [],
+        "objs": [
+          {
+            "type": "SingleRay",
+            "p1": {
+              "x": "`-abs(x_1)`",
+              "y": "`y_1`"
+            },
+            "p2": {
+              "x": 0,
+              "y": "`y_1`"
+            }
+          },
+          {
+            "type": "SingleRay",
+            "p1": {
+              "x": "`-abs(x_1)`",
+              "y": "`y_1`"
+            },
+            "p2": {
+              "x": 0,
+              "y": 160
+            }
+          },
+          {
+            "type": "SingleRay",
+            "p1": {
+              "x": "`-abs(x_1)`",
+              "y": "`y_1`"
+            },
+            "p2": {
+              "x": "`abs(x_2)`",
+              "y": "`y_2`"
+            }
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`-abs(x_1)`",
+              "y": 160
+            },
+            "p2": {
+              "x": "`-abs(x_1)`",
+              "y": "`y_1`"
+            },
+            "arrow": true
+          },
+          {
+            "type": "IdealLens",
+            "p1": {
+              "x": 0,
+              "y": 0
+            },
+            "p2": {
+              "x": 0,
+              "y": 320
+            },
+            "focalLength": "`-abs(x_2)`"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`-abs(x_2)`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`-abs(x_2)`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`-abs(x_2)`",
+            "y": 150,
+            "text": "f",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`-abs(x_2) * 2`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`-abs(x_2) * 2`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`-abs(x_2) * 2`",
+            "y": 150,
+            "text": "2f",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`abs(x_2)`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`abs(x_2)`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`abs(x_2)`",
+            "y": 150,
+            "text": "f",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          },
+          {
+            "type": "LineArrow",
+            "p1": {
+              "x": "`-abs(x_2) * -2`",
+              "y": 155
+            },
+            "p2": {
+              "x": "`-abs(x_2) * -2`",
+              "y": 165
+            }
+          },
+          {
+            "type": "TextLabel",
+            "x": "`-abs(x_2) * -2`",
+            "y": 150,
+            "text": "2f",
+            "fontStyle": "Italic",
+            "alignment": "center"
+          }
+        ]
+      }
+    },
+    "objs": [
+      {
+        "type": "Handle",
+        "p1": {
+          "x": -270,
+          "y": 70
+        },
+        "p2": {
+          "x": -60,
+          "y": 100
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 0
+            },
+            "targetObjIndex": 2,
+            "newPoint": {
+              "x": -240,
+              "y": 100
+            }
+          }
+        ],
+        "transformation": "translation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": -100,
+          "y": 220
+        },
+        "p2": {
+          "x": 0.5,
+          "y": 160
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 1
+            },
+            "targetObjIndex": 2,
+            "newPoint": {
+              "x": -100,
+              "y": 160
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "ModuleObj",
+        "module": "CustomRay",
+        "points": [
+          {
+            "x": -240,
+            "y": 100
+          },
+          {
+            "x": -100,
+            "y": 160
+          }
+        ],
+        "params": {}
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": -3000,
+          "y": 160
+        },
+        "p2": {
+          "x": 5000,
+          "y": 160
+        }
+      },
+      {
+        "type": "TextLabel",
+        "x": 0,
+        "y": -12.5,
+        "text": "{{nguslts}}",
+        "alignment": "center"
+      }
+    ],
+    "width": 1800,
+    "height": 900,
+    "mode": "extended",
+    "showGrid": true,
+    "observer": {
+      "c": {
+        "x": 76.24421517450193,
+        "y": 127.45811693052168
+      },
+      "r": 20
+    },
+    "origin": {
+      "x": 810.2684765083369,
+      "y": 195.1816986732545
+    },
+    "scale": 1.9806018425768386
+  }

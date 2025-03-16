@@ -545,26 +545,26 @@ class Editor {
     }
 
 
-    if (this.isConstructing) {
-      if ((e.which && e.which == 1) || (e.changedTouches)) {
-        // Only react for left click
-        // If an obj is being created, pass the action to it
-        if (this.selectedObjIndex != this.scene.objs.length - 1) {
-          this.selectObj(this.scene.objs.length - 1); // Keep the constructing obj selected
-        }
-        const ret = this.scene.objs[this.scene.objs.length - 1].onConstructMouseDown(new Mouse(mousePos_nogrid, this.scene, this.lastDeviceIsTouch), e.ctrlKey, e.shiftKey);
-        if (ret && ret.isDone) {
-          this.isConstructing = false;
-        }
-        if (ret && ret.requiresObjBarUpdate) {
-          this.selectObj(this.selectedObjIndex);
-        }
-        this.simulator.updateSimulation(!this.scene.objs[this.scene.objs.length - 1].constructor.isOptical, true);
-      }
-    }
-    else {
-      // lockObjs prevents selection, but alt overrides it
-      if ((!(this.scene.lockObjs) != (e.altKey && this.addingObjType != '')) && !(e.which == 3)) {
+    //if (this.isConstructing) {
+    //  if ((e.which && e.which == 1) || (e.changedTouches)) {
+    //    // Only react for left click
+    //    // If an obj is being created, pass the action to it
+    //    if (this.selectedObjIndex != this.scene.objs.length - 1) {
+    //      this.selectObj(this.scene.objs.length - 1); // Keep the constructing obj selected
+    //    }
+    //    const ret = this.scene.objs[this.scene.objs.length - 1].onConstructMouseDown(new Mouse(mousePos_nogrid, this.scene, this.lastDeviceIsTouch), e.ctrlKey, e.shiftKey);
+    //    if (ret && ret.isDone) {
+    //      this.isConstructing = false;
+    //    }
+    //    if (ret && ret.requiresObjBarUpdate) {
+    //      this.selectObj(this.selectedObjIndex);
+    //    }
+    //    this.simulator.updateSimulation(!this.scene.objs[this.scene.objs.length - 1].constructor.isOptical, true);
+    //  }
+    //}
+    //else {
+      //// lockObjs prevents selection, but alt overrides it
+      //if ((!(this.scene.lockObjs) != (e.altKey && this.addingObjType != '')) && !(e.which == 3)) {
 
         this.dragContext = {};
 
@@ -582,12 +582,12 @@ class Editor {
 
         var rets = this.selectionSearch(mousePos_nogrid);
         var ret = rets[0];
-        if (ret.targetObjIndex != -1) {
-          if (!e.ctrlKey && this.scene.objs.length > 0 && this.scene.objs[0].constructor.type == "Handle" && this.scene.objs[0].notDone) {
-            // User is creating a handle
-            this.removeObj(0);
-            ret.targetObjIndex--;
-          }
+        if (ret.targetObjIndex != -1 && this.scene.objs[ret.targetObjIndex].constructor.type == "Handle" && ret.dragContext.part == 1 /* Prevents dragging secondary handle control points */) {
+          //if (!e.ctrlKey && this.scene.objs.length > 0 && this.scene.objs[0].constructor.type == "Handle" && this.scene.objs[0].notDone) {
+          //  // User is creating a handle
+          //  this.removeObj(0);
+          //  ret.targetObjIndex--;
+          //}
           this.selectObj(ret.targetObjIndex);
           this.dragContext = ret.dragContext;
           this.dragContext.originalObj = this.scene.objs[ret.targetObjIndex].serialize(); // Store the obj status before dragging
@@ -599,15 +599,15 @@ class Editor {
           }
           return;
         }
-      }
+      //}
 
       if (this.draggingObjIndex == -1) {
         // The mousePos clicked the blank area
-        if (this.scene.objs.length > 0 && this.scene.objs[0].constructor.type == "Handle" && this.scene.objs[0].notDone) {
-          // User is creating a handle
-          this.finishHandleCreation(this.mousePos);
-          return;
-        }
+        //if (this.scene.objs.length > 0 && this.scene.objs[0].constructor.type == "Handle" && this.scene.objs[0].notDone) {
+        //  // User is creating a handle
+        //  this.finishHandleCreation(this.mousePos);
+        //  return;
+        //}
         if ((this.addingObjType == '') || (e.which == 3)) {
           // To drag the entire scene
           this.draggingObjIndex = -3;
@@ -618,26 +618,26 @@ class Editor {
           this.dragContext.snapContext = {};
           this.selectObj(-1);
         }
-        else {
-          // Create a new object
-          this.isConstructing = true;
-          let referenceObj = {};
-          if (this.scene.objs[this.selectedObjIndex]) {
-            if (this.scene.objs[this.selectedObjIndex].constructor.type == this.addingObjType) {
-              referenceObj = this.scene.objs[this.selectedObjIndex].serialize();
-            }
-          }
-          this.scene.pushObj(new sceneObjs[this.addingObjType](this.scene, referenceObj));
-
-          const ret = this.scene.objs[this.scene.objs.length - 1].onConstructMouseDown(new Mouse(mousePos_nogrid, this.scene, this.lastDeviceIsTouch));
-          if (ret && ret.isDone) {
-            this.isConstructing = false;
-          }
-          this.selectObj(this.scene.objs.length - 1);
-          this.simulator.updateSimulation(!this.scene.objs[this.scene.objs.length - 1].constructor.isOptical, true);
-        }
+        //else {
+        //  // Create a new object
+        //  this.isConstructing = true;
+        //  let referenceObj = {};
+        //  if (this.scene.objs[this.selectedObjIndex]) {
+        //    if (this.scene.objs[this.selectedObjIndex].constructor.type == this.addingObjType) {
+        //      referenceObj = this.scene.objs[this.selectedObjIndex].serialize();
+        //    }
+        //  }
+        //  this.scene.pushObj(new sceneObjs[this.addingObjType](this.scene, referenceObj));
+        //
+        //  const ret = this.scene.objs[this.scene.objs.length - 1].onConstructMouseDown(new Mouse(mousePos_nogrid, this.scene, this.lastDeviceIsTouch));
+        //  if (ret && ret.isDone) {
+        //    this.isConstructing = false;
+        //  }
+        //  this.selectObj(this.scene.objs.length - 1);
+        //  this.simulator.updateSimulation(!this.scene.objs[this.scene.objs.length - 1].constructor.isOptical, true);
+        //}
       }
-    }
+    //}
   }
 
   /**
@@ -683,19 +683,34 @@ class Editor {
       // highlight object under mousePos cursor
       var ret = this.selectionSearch(mousePos_nogrid)[0];
       //console.log(mousePos_nogrid);
+      var isHandle = false;
+      if(this.scene.objs.hasOwnProperty(ret.targetObjIndex))
+        isHandle = (this.scene.objs[ret.targetObjIndex].constructor.type == "Handle" && ret.dragContext.part == 1 /* Prevents highlighting secondary handle control points */);
       if (this.hoveredObjIndex != ret.targetObjIndex) {
-        this.hoveredObjIndex = ret.targetObjIndex;
-        this.simulator.updateSimulation(true, true);
+        // always stop highlighting if hover ends
+        if(ret.targetObjIndex == -1) {
+            this.hoveredObjIndex = ret.targetObjIndex;
+            this.simulator.updateSimulation(true, true);
+        }
+        // if hover starts on an object, only highlight it if it is a handle
+        else if(isHandle) {
+            this.hoveredObjIndex = ret.targetObjIndex;
+            this.simulator.updateSimulation(true, true);
+        }
       }
       if (ret.dragContext) {
-        if (ret.dragContext.cursor) {
-          this.canvas.style.cursor = ret.dragContext.cursor;
-        } else if (ret.dragContext.targetPoint || ret.dragContext.targetPoint_) {
-          this.canvas.style.cursor = 'pointer';
-        } else if (ret.dragContext.part == 0) {
-          this.canvas.style.cursor = 'move';
+        if(isHandle) {
+            if (ret.dragContext.cursor) {
+                this.canvas.style.cursor = ret.dragContext.cursor;
+              } else if (ret.dragContext.targetPoint || ret.dragContext.targetPoint_) {
+                this.canvas.style.cursor = 'pointer';
+              } else if (ret.dragContext.part == 0) {
+                this.canvas.style.cursor = 'move';
+              } else {
+                this.canvas.style.cursor = '';
+              }
         } else {
-          this.canvas.style.cursor = '';
+            this.canvas.style.cursor = '';
         }
       } else {
         if (this.scene.mode == 'observer' && geometry.distanceSquared(this.mousePos, this.scene.observer.c) < this.scene.observer.r * this.scene.observer.r) {
@@ -861,11 +876,15 @@ class Editor {
         this.pendingControlPointSelection = false
         this.addControlPointsForHandle(this.pendingControlPoints);
       }
-      if (e.which && e.which == 3 && this.draggingObjIndex == -3 && this.mousePos.x == this.dragContext.mousePos0.x && this.mousePos.y == this.dragContext.mousePos0.y) {
-        this.draggingObjIndex = -1;
-        this.dragContext = {};
-        this.onCanvasDblClick(e);
-        return;
+      try {
+        if (e.which && e.which == 3 && this.draggingObjIndex == -3 && this.mousePos.x == this.dragContext.mousePos0.x && this.mousePos.y == this.dragContext.mousePos0.y) {
+            this.draggingObjIndex = -1;
+            this.dragContext = {};
+            this.onCanvasDblClick(e);
+            return;
+          }
+      } catch {
+
       }
       this.onActionComplete();
       this.draggingObjIndex = -1;
@@ -880,49 +899,49 @@ class Editor {
    * @param {MouseEvent} e - The event.
    */
   onCanvasDblClick(e) {
-    //console.log("dblclick");
-    // Get raw coordinates first
-    const rawX = (e.pageX - e.target.offsetLeft - this.scene.origin.x) / this.scene.scale;
-    const rawY = (e.pageY - e.target.offsetTop - this.scene.origin.y) / this.scene.scale;
-    
-    // Truncate to binary fractions
-    const truncX = this.truncateToBinaryFraction(rawX, this.scene.scale);
-    const truncY = this.truncateToBinaryFraction(rawY, this.scene.scale);
-    
-    this.mousePos = geometry.point(truncX, truncY);
-    if (this.isConstructing) {
-    }
-    else if (new Mouse(this.mousePos, this.scene, this.lastDeviceIsTouch).isOnPoint(this.lastMousePos)) {
-      this.dragContext = {};
-
-      if (this.scene.mode == 'observer') {
-        if (geometry.distanceSquared(this.mousePos, this.scene.observer.c) < this.scene.observer.r * this.scene.observer.r) {
-
-          // The mousePos clicked the observer
-          this.positioningObjIndex = -4;
-          this.dragContext = {};
-          this.dragContext.targetPoint = geometry.point(this.scene.observer.c.x, this.scene.observer.c.y);
-          this.dragContext.snapContext = {};
-
-          this.emit('positioningStart', { dragContext: this.dragContext });
-
-          return;
-        }
-      }
-
-      var ret = this.selectionSearch(this.mousePos)[0];
-      if (ret.targetObjIndex != -1 && ret.dragContext.targetPoint) {
-        this.selectObj(ret.targetObjIndex);
-        this.dragContext = ret.dragContext;
-        this.dragContext.originalObj = this.scene.objs[ret.targetObjIndex].serialize(); // Store the obj status before dragging
-
-        this.dragContext.hasDuplicated = false;
-        this.positioningObjIndex = ret.targetObjIndex;
-
-        this.emit('positioningStart', { dragContext: this.dragContext });
-
-      }
-    }
+    ////console.log("dblclick");
+    //// Get raw coordinates first
+    //const rawX = (e.pageX - e.target.offsetLeft - this.scene.origin.x) / this.scene.scale;
+    //const rawY = (e.pageY - e.target.offsetTop - this.scene.origin.y) / this.scene.scale;
+    //
+    //// Truncate to binary fractions
+    //const truncX = this.truncateToBinaryFraction(rawX, this.scene.scale);
+    //const truncY = this.truncateToBinaryFraction(rawY, this.scene.scale);
+    //
+    //this.mousePos = geometry.point(truncX, truncY);
+    //if (this.isConstructing) {
+    //}
+    //else if (new Mouse(this.mousePos, this.scene, this.lastDeviceIsTouch).isOnPoint(this.lastMousePos)) {
+    //  this.dragContext = {};
+    //
+    //  if (this.scene.mode == 'observer') {
+    //    if (geometry.distanceSquared(this.mousePos, this.scene.observer.c) < this.scene.observer.r * this.scene.observer.r) {
+    //
+    //      // The mousePos clicked the observer
+    //      this.positioningObjIndex = -4;
+    //      this.dragContext = {};
+    //      this.dragContext.targetPoint = geometry.point(this.scene.observer.c.x, this.scene.observer.c.y);
+    //      this.dragContext.snapContext = {};
+    //
+    //      this.emit('positioningStart', { dragContext: this.dragContext });
+    //
+    //      return;
+    //    }
+    //  }
+    //
+    //  var ret = this.selectionSearch(this.mousePos)[0];
+    //  if (ret.targetObjIndex != -1 && ret.dragContext.targetPoint) {
+    //    this.selectObj(ret.targetObjIndex);
+    //    this.dragContext = ret.dragContext;
+    //    this.dragContext.originalObj = this.scene.objs[ret.targetObjIndex].serialize(); // Store the obj status before dragging
+    //
+    //    this.dragContext.hasDuplicated = false;
+    //    this.positioningObjIndex = ret.targetObjIndex;
+    //
+    //    this.emit('positioningStart', { dragContext: this.dragContext });
+    //
+    //  }
+    //}
 
   }
 

@@ -132,6 +132,11 @@
 
 /* modifications to Bootstrap style */
 
+.btn {
+      /* Added to fix the look of buttons when nearby elements are hidden */
+  border-radius: 0px !important;
+}
+
 .btn-group {
   padding-left: 0px;
   padding-right: 0px;

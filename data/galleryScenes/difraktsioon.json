@@ -1,0 +1,330 @@
+{
+    "version": 5,
+    "modules": {
+      "CustomRay": {
+        "numPoints": 5,
+        "params": [],
+        "objs": [
+          {
+            "type": "TextLabel",
+            "x": 240,
+            "y": 30,
+            "text": "{{difraktsioonivre}}",
+            "alignment": "center"
+          },
+          {
+            "type": "SingleRay",
+            "p1": {
+              "x": "`x_2`",
+              "y": "`y_2`"
+            },
+            "p2": {
+              "x": "`x_1`",
+              "y": "`y_1`"
+            },
+            "brightness": "`max((round((x_5- 300)/0.5)+455)/1, -100000)`",
+            "wavelength": "`min(max((round((x_4-300)/1.2)+488)/1, 300), 700)`"
+          },
+          {
+            "type": "DiffractionGrating",
+            "p1": {
+              "x": 240,
+              "y": 40
+            },
+            "p2": {
+              "x": 240,
+              "y": 240
+            },
+            "lineDensity": "`max((round((x_3-300)/0.5)+440)/1, 1)`",
+            "slitRatio": 0.5
+          },
+          {
+            "type": "TextLabel",
+            "x": 300,
+            "y": 290,
+            "text": "n = `max((round((x_3-300)/0.5)+440)/1, -500)`",
+            "alignment": "center"
+          },
+          {
+            "type": "TextLabel",
+            "x": 300,
+            "y": 350,
+            "text": "λ = `min(max((round((x_4-300)/1.2)+488)/1, 300), 700)`",
+            "alignment": "center"
+          },
+          {
+            "type": "TextLabel",
+            "x": 300,
+            "y": 410,
+            "text": "heledus = `max((round((x_5- 300)/0.5)+455)/1, -100000)`",
+            "alignment": "center"
+          }
+        ]
+      }
+    },
+    "objs": [
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 280,
+          "y": 420
+        },
+        "p2": {
+          "x": 280,
+          "y": 460
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 4
+            },
+            "targetObjIndex": 4,
+            "newPoint": {
+              "x": 280,
+              "y": 460
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 300,
+          "y": 360
+        },
+        "p2": {
+          "x": 300,
+          "y": 360
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 3
+            },
+            "targetObjIndex": 4,
+            "newPoint": {
+              "x": 300,
+              "y": 400
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 40,
+          "y": 140
+        },
+        "p2": {
+          "x": 100,
+          "y": 140
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 0
+            },
+            "targetObjIndex": 4,
+            "newPoint": {
+              "x": 180,
+              "y": 140
+            }
+          }
+        ],
+        "transformation": "rotation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 180,
+          "y": 300
+        },
+        "p2": {
+          "x": 180,
+          "y": 300
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 2
+            },
+            "targetObjIndex": 4,
+            "newPoint": {
+              "x": 180,
+              "y": 275
+            }
+          }
+        ],
+        "transformation": "xTranslation"
+      },
+      {
+        "type": "ModuleObj",
+        "module": "CustomRay",
+        "points": [
+          {
+            "x": 180,
+            "y": 140
+          },
+          {
+            "x": 100,
+            "y": 140
+          },
+          {
+            "x": 180,
+            "y": 275
+          },
+          {
+            "x": 300,
+            "y": 400
+          },
+          {
+            "x": 280,
+            "y": 460
+          }
+        ],
+        "params": {}
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 320
+        },
+        "p2": {
+          "x": 580,
+          "y": 320
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 320
+        },
+        "p2": {
+          "x": 75,
+          "y": 300
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 580,
+          "y": 320
+        },
+        "p2": {
+          "x": 580,
+          "y": 300
+        }
+      },
+      {
+        "type": "TextLabel",
+        "x": 585,
+        "y": 300,
+        "text": "1000",
+        "alignment": "center"
+      },
+      {
+        "type": "TextLabel",
+        "x": 75,
+        "y": 300,
+        "text": "1",
+        "alignment": "center"
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 380
+        },
+        "p2": {
+          "x": 560,
+          "y": 380
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 380
+        },
+        "p2": {
+          "x": 75,
+          "y": 360
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 560,
+          "y": 380
+        },
+        "p2": {
+          "x": 560,
+          "y": 360
+        }
+      },
+      {
+        "type": "TextLabel",
+        "x": 75,
+        "y": 360,
+        "text": "380",
+        "alignment": "center"
+      },
+      {
+        "type": "TextLabel",
+        "x": 560,
+        "y": 360,
+        "text": "700",
+        "alignment": "center"
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 440
+        },
+        "p2": {
+          "x": 560,
+          "y": 440
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 75,
+          "y": 440
+        },
+        "p2": {
+          "x": 75,
+          "y": 420
+        }
+      },
+      {
+        "type": "LineArrow",
+        "p1": {
+          "x": 560,
+          "y": 440
+        },
+        "p2": {
+          "x": 560,
+          "y": 420
+        }
+      }
+    ],
+    "width": 1800,
+    "height": 900,
+    "origin": {
+      "x": 206.81149128099952,
+      "y": 142.2165688534108
+    },
+    "scale": 1.5904244423149905,
+    "simulateColors": true,
+    "showRayArrows": true
+  }

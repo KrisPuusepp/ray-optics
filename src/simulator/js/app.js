@@ -482,36 +482,36 @@ async function startApp() {
       }
       return false;
     }
-    //Ctrl+D or Cmd+D
-    if ((e.ctrlKey || e.metaKey) && e.keyCode == 68) {
-      if (editor.selectedObjIndex != -1) {
-        if (scene.objs[editor.selectedObjIndex].constructor.type == 'Handle') {
-          scene.cloneObjsByHandle(editor.selectedObjIndex);
-        } else {
-          scene.cloneObj(editor.selectedObjIndex);
-        }
-
-        simulator.updateSimulation(!scene.objs[editor.selectedObjIndex].constructor.isOptical, true);
-        editor.onActionComplete();
-      }
-      return false;
-    }
+    ////Ctrl+D or Cmd+D
+    //if ((e.ctrlKey || e.metaKey) && e.keyCode == 68) {
+    //  if (editor.selectedObjIndex != -1) {
+    //    if (scene.objs[editor.selectedObjIndex].constructor.type == 'Handle') {
+    //      scene.cloneObjsByHandle(editor.selectedObjIndex);
+    //    } else {
+    //      scene.cloneObj(editor.selectedObjIndex);
+    //    }
+    //
+    //    simulator.updateSimulation(!scene.objs[editor.selectedObjIndex].constructor.isOptical, true);
+    //    editor.onActionComplete();
+    //  }
+    //  return false;
+    //}
     //Ctrl+Y or Cmd+Y
     if ((e.ctrlKey || e.metaKey) && e.keyCode == 89) {
       document.getElementById('redo').onclick();
     }
 
     //Ctrl+S or Cmd+S
-    if ((e.ctrlKey || e.metaKey) && e.keyCode == 83) {
-      save();
-      return false;
-    }
+    //if ((e.ctrlKey || e.metaKey) && e.keyCode == 83) {
+    //  save();
+    //  return false;
+    //}
 
     //Ctrl+O or Cmd+O
-    if ((e.ctrlKey || e.metaKey) && e.keyCode == 79) {
-      document.getElementById('open').onclick();
-      return false;
-    }
+    //if ((e.ctrlKey || e.metaKey) && e.keyCode == 79) {
+    //  document.getElementById('open').onclick();
+    //  return false;
+    //}
 
     //esc
     if (e.keyCode == 27) {
@@ -520,16 +520,16 @@ async function startApp() {
       }
     }
 
-    //Delete
-    if (e.keyCode == 46 || e.keyCode == 8) {
-      if (editor.selectedObjIndex != -1) {
-        var selectedObjType = scene.objs[editor.selectedObjIndex].constructor.type;
-        editor.removeObj(editor.selectedObjIndex);
-        simulator.updateSimulation(!sceneObjs[selectedObjType].isOptical, true);
-        editor.onActionComplete();
-      }
-      return false;
-    }
+    ////Delete
+    //if (e.keyCode == 46 || e.keyCode == 8) {
+    //  if (editor.selectedObjIndex != -1) {
+    //    var selectedObjType = scene.objs[editor.selectedObjIndex].constructor.type;
+    //    editor.removeObj(editor.selectedObjIndex);
+    //    simulator.updateSimulation(!sceneObjs[selectedObjType].isOptical, true);
+    //    editor.onActionComplete();
+    //  }
+    //  return false;
+    //}
 
     //Arrow Keys
     if (e.keyCode >= 37 && e.keyCode <= 40) {
@@ -1093,7 +1093,7 @@ async function startApp() {
     } else if (window.location.hash.length > 1) {
       // The URL contains a link to a gallery item.
       openSample(window.location.hash.substr(1) + ".json");
-      history.replaceState('', document.title, window.location.pathname + window.location.search);
+      //history.replaceState('', document.title, window.location.pathname + window.location.search);
     }
   };
 
@@ -1454,7 +1454,7 @@ function initUIText() {
     `;
     */
     const a = document.createElement('a');
-    a.href = '?' + locale;
+    a.href = '?' + locale + window.location.hash; // Keeps the simulation name, even when changing the language or otherwise reloading
     a.classList.add('btn', 'btn-primary', 'dropdown-item', 'd-flex', 'align-items-center');
     a.addEventListener('click', function (event) {
       if (autoSyncUrl && !hasUnsavedChange) {
@@ -2159,11 +2159,11 @@ function getLink() {
 }
 
 
-window.onbeforeunload = function (e) {
-  if (hasUnsavedChange) {
-    return "You have unsaved change.";
-  }
-}
+//window.onbeforeunload = function (e) {
+//  if (hasUnsavedChange) {
+//    return "You have unsaved change.";
+//  }
+//}
 
 function confirmPositioning(ctrl, shift) {
   var xyData = JSON.parse('[' + document.getElementById('xybox').value.replace(/\(|\)/g, '') + ']');
