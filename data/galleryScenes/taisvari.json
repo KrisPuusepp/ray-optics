@@ -24,31 +24,6 @@
         "type": "Handle",
         "p1": {
           "x": 300,
-          "y": 200
-        },
-        "p2": {
-          "x": 300,
-          "y": 80
-        },
-        "controlPoints": [
-          {
-            "dragContext": {
-              "part": 1,
-              "index": 1
-            },
-            "targetObjIndex": 6,
-            "newPoint": {
-              "x": 300,
-              "y": 80
-            }
-          }
-        ],
-        "transformation": "yTranslation"
-      },
-      {
-        "type": "Handle",
-        "p1": {
-          "x": 300,
           "y": 150
         },
         "p2": {
@@ -61,7 +36,7 @@
               "part": 1,
               "index": 0
             },
-            "targetObjIndex": 6,
+            "targetObjIndex": 5,
             "newPoint": {
               "x": 300,
               "y": 0
@@ -69,6 +44,31 @@
           }
         ],
         "transformation": "xTranslation"
+      },
+      {
+        "type": "Handle",
+        "p1": {
+          "x": 300,
+          "y": 200
+        },
+        "p2": {
+          "x": 303,
+          "y": 80
+        },
+        "controlPoints": [
+          {
+            "dragContext": {
+              "part": 1,
+              "index": 1
+            },
+            "targetObjIndex": 5,
+            "newPoint": {
+              "x": 300,
+              "y": 80
+            }
+          }
+        ],
+        "transformation": "yTranslation"
       },
       {
         "type": "PointSource",
@@ -102,7 +102,7 @@
             "y": 0
           },
           {
-            "x": 300,
+            "x": 303,
             "y": 80
           }
         ],
