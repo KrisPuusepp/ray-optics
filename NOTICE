@@ -5,9 +5,9 @@ This project is a fork of the Ray Optics Simulation, originally developed by its
 The original project is licensed under the Apache License, Version 2.0.
 
 Modifications in this fork include:
-- a lot of UI is now hidden, preventing actions such as adding new objects
-- objects now cannot be directly moved anymore and handles must be used
-- some rendering code has been commented out to simplify the view of the objects in the simulation
+- a lot of UI now being hidden, preventing actions such as adding new objects
+- direct movement of objects being prevented (handles must be used)
+- some rendering code having been commented out to simplify the view of the objects in the simulation
 - changes to simulation loading and URL handling
 - a new impartial EE locale
 
